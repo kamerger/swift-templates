@@ -5,11 +5,11 @@ VIPER module template based on BaseViewController: UIViewController, Routable
 ##Usage
 You need to add [VIPERRouter.swift](https://github.com/MaksimBazarov/swift-templates/blob/master/Router/VIPERRouter.swift) in your project first
 
-Use  `generamba gen SampleScreen module-vc` for generate module, where `SampleScreen` is midule name, and you'll get this files:
+Use  `generamba gen SampleScreen module-vc` for generate module, where `SampleScreen` is mщdule name, and you'll get this files:
 
 **SampleScreen** folder
 - [SampleScreenAssembly.swift](#samplescreenassemblyswift) // Assembly
-- [SampleScreenModule.swift](#samplescreenmoduleswift) // Module unterface and Presenter
+- [SampleScreenModule.swift](#samplescreenmoduleswift) // Module interface and Presenter
 - [SampleScreenView.swift](#samplescreenviewswift) // View interface and View Controller sublass 
 - [SampleScreenInteractor.swift](#samplescreeninteractorswift) // Interactor
 - [SampleScreenRouter.swift](#samplescreenrouterswift) // Router
@@ -142,7 +142,7 @@ final class SampleScreenInteractor: SampleScreenInteractorInput
 ```
 
 ###SampleScreenRouter.swift
-```
+```swift
 import UIKit
 
 // MARK: - Router
