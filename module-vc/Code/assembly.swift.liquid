@@ -22,7 +22,8 @@ final class {{ module_info.name }}Assembly
 
         presenter.view = vc
         presenter.interactor = interactor
-
+        presenter.router = router
+		
         configure(module: presenter)
 
         vc.output = presenter

@@ -28,7 +28,7 @@ final class {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput
 {
     weak var view: {{ module_info.name }}ViewInput!
     var interactor: {{ module_info.name }}InteractorInput!
-
+	weak var router: {{ module_info.name }}Router!
     weak var output: {{ module_info.name }}ModuleOutput?
 
     func setupDelegate(output: {{ module_info.name }}ModuleOutput)
