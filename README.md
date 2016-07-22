@@ -11,7 +11,7 @@ This is the collection of templates for [`Generamba`](https://github.com/rambler
 ```
 ### Templates
 catalogs:
-- 'https://github.com/MaksimBazarov/swift-templates'
+- 'https://github.com/VIPER/swift-templates'
 templates:
 - {name: module-vc}
 ```
