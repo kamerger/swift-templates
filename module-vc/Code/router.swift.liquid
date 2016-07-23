@@ -11,5 +11,6 @@ import UIKit
 // MARK: - Router
 final class {{ module_info.name }}Router: VIPERRouter
 {
-    weak var view: {{ module_info.name }}ViewController!
+    weak var viewController: {{ module_info.name }}ViewController!
+	weak var presenter: {{ module_info.name }}Presenter!
 }

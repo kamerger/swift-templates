@@ -29,7 +29,8 @@ final class {{ module_info.name }}Assembly
         vc.output = presenter
         vc.router = router
 
-        router.view = vc
+        router.viewController = vc
+		router.presenter = presenter
 
         return vc
     }
