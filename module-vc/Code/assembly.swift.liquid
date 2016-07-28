@@ -23,14 +23,14 @@ final class {{ module_info.name }}Assembly
         presenter.view = vc
         presenter.interactor = interactor
         presenter.router = router
-		
+
         configure(module: presenter)
 
         vc.output = presenter
         vc.router = router
 
         router.viewController = vc
-		router.presenter = presenter
+        router.presenter = presenter
 
         return vc
     }

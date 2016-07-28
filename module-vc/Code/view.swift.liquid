@@ -22,7 +22,7 @@ protocol {{ module_info.name }}ViewOutput: class
 // MARK: - View Controller
 final class {{ module_info.name }}ViewController: BaseViewController
     , {{ module_info.name }}ViewInput
-	, Routable
+    , Routable
 {
     var output: {{ module_info.name }}ViewOutput!
     typealias RouterType = {{ module_info.name }}Router

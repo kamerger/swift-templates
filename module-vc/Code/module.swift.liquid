@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - Module interface
-protocol {{ module_info.name }}ModuleInput
+protocol {{ module_info.name }}ModuleInput: class
 {
     func setupDelegate(output: {{ module_info.name }}ModuleOutput)
 }
@@ -26,9 +26,9 @@ final class {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput
     , {{ module_info.name }}ViewOutput
     , {{ module_info.name }}InteractorOutput
 {
-    weak var view: {{ module_info.name }}ViewInput!
     var interactor: {{ module_info.name }}InteractorInput!
-	weak var router: {{ module_info.name }}Router!
+    weak var viewController: {{ module_info.name }}ViewInput!
+    weak var router: {{ module_info.name }}Router!
     weak var output: {{ module_info.name }}ModuleOutput?
 
     func setupDelegate(output: {{ module_info.name }}ModuleOutput)
