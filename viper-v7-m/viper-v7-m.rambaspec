@@ -1,0 +1,23 @@
+# Template information section
+name: "viper-v7-m"
+summary: "VIPER module template based on UIViewController (Bonial Edition)"
+author: "Maksim Bazarov"
+version: "1.7"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+# Module Interface
+- {name: Interface.swift, path: Code/interface.swift.liquid}
+
+# Module layer
+- {name: Module/Interactor.swift, path: Code/interactor.swift.liquid}
+- {name: Module/Presenter.swift,  path: Code/presenter.swift.liquid}
+- {name: Module/Router.swift, path: Code/router.swift.liquid}
+# View layer
+- {name: View/View.swift, path: Code/view.swift.liquid}
+# Router layer
+
+# Configurator
+- {name: Assembly.swift, path: Code/assembly.swift.liquid}
