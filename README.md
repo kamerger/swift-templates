@@ -13,7 +13,7 @@ This is the collection of templates for [`Generamba`](https://github.com/rambler
 catalogs:
 - 'https://github.com/VIPER/swift-templates'
 templates:
-- {name: module-vc}
+- {name: vicr}
 ```
 
 3) Run `generamba template install`
