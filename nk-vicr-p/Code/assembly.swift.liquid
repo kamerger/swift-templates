@@ -1,0 +1,44 @@
+//
+//  {{ prefix }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import NavigationKit
+
+final class {{ module_info.name }}Assembly
+{
+
+
+	class func createModule({% if custom_parameters.di > '' %}usingDI diContainer: {{ custom_parameters.di }}, {% endif %}configure: (_ module: {{ module_info.name }}ModuleInput) -> Void) -> NKViewController {
+	{% if custom_parameters.sb > '' %}
+        let storyboard = UIStoryboard(name: "{{ custom_parameters.sb }}", bundle: nil)
+        let view = storyboard.instantiateViewController(withIdentifier: "{{ module_info.name }}ViewController") as! {{ module_info.name }}ViewController
+	{% else %}
+		let view = {{ module_info.name }}ViewController()
+	{% endif %}
+        view.configure()
+
+		let interactor = {{ module_info.name }}Interactor()
+		let controller = {{ module_info.name }}Controller()
+		let router = {{ module_info.name }}Router()
+
+		interactor.output = controller
+
+		controller.view = view
+		controller.interactor = interactor
+		controller.router = router
+
+		configure(controller)
+
+		view.output = controller
+
+		router.view = view
+
+		return view
+	}
+  
+}
+

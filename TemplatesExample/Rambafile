@@ -1,0 +1,16 @@
+### Headers settings
+company: Maxim Bazarov
+
+### Xcode project settings
+project_name: Templates Example
+xcodeproj_path: TemplatesExample.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: TemplatesExample
+
+### Templates
+catalogs:
+# - 'https://github.com/VIPER/swift-templates'
+templates:
+- {name: nk-vicr-p, local: '/Users/maksim.bazarov/own/swift-templates/nk-vicr-p'}
