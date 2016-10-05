@@ -1,6 +1,6 @@
 # Template information section
-name: nk-vicr-p
-summary: NavigationKit based VICR module
+name: vicr-t
+summary: VICR module
 author: Maksim Bazarov (de@mks.im)
 version: 1.0.0
 license: MIT
@@ -19,17 +19,12 @@ code_files:
 # Module/View
 - {name: Module/View/View.swift, path: Code/view.swift.liquid}
 
+# Data source if it needed 
 {% if custom_parameters.type == 'table' %}
 - {name: Module/View/DataSource.swift, path: Code/datasource.swift.liquid}
 {% endif %}
-
-
-
 
 # The declarations for test files
 # test_files:
 # - {name: Service/ServiceTests.m, path: Tests/Service/service_tests.m.liquid}
 
-# # Template dependencies
-# dependencies:
-# - NavigationKit
