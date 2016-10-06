@@ -18,7 +18,7 @@ for generate module, where `SampleScreen` is module name
 ###Options
 
 ####type: 
-`table` for generating table view module with cell and datasource
+`table` for generating table view module with cell and datasource, skip if need ViewController
 
 ####model:
 Domain model class name Xcode template by default
