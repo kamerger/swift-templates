@@ -1,63 +1,48 @@
-//
-//  {{ prefix }}{{ module_info.file_name }}
-//  {{ module_info.project_name }}
-//
-//  Created by {{ developer.name }} on {{ date }}.
-//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
-//
+{% include 'header' -%}{% include 'parameters' -%}
 
-import NavigationKit
+{{ ui_imports -}}
+
 
 // MARK: - Interface
 protocol {{ module_info.name }}ViewInput: class {
-{% if custom_parameters.type == 'table' %}
-	func update(withData data: [<#DataDomainModel#>])
-{% else %}
-	func update(withData data: <#DataDomainModel#>)
-{% endif %}    func update(withError error: <#ErrorModel#> )
+    func update(withData data: {% if custom_parameters.type == 'table' -%}[{{ DomainModel -}}]{% else -%}{{ DomainModel -}}{% endif -%})
+    func update(withError error: {{ ErrorModel }})
 }
 
 protocol {{ module_info.name }}ViewOutput: class {
-	func moduleDidLoad()
+    func moduleDidLoad()
 }
 
-// MARK: - View Controller
-{% if custom_parameters.type == 'table' %}
-final class {{ module_info.name }}ViewController: NKTableViewController { 	
-{% else %}
-final class {{ module_info.name }}ViewController: NKViewController {
-{% endif %}
-	var output: {{ module_info.name }}ViewOutput!
-{% if custom_parameters.type == 'table' %}
-	var dataSource = {{ module_info.name }}DataSource()
-{% endif %}
-	// MARK: - Life cycle
-    func configure() {
-	{% if custom_parameters.tabbaritem > '' %}
-        tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
-	{% endif %}
-    }
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		output.moduleDidLoad()
-	}
 
-	// MARK: View Input
+// MARK: - View Controller
+final class {{ module_info.name }}ViewController: {{ ViewClass -}} {
+    
+    var output: {{ module_info.name }}ViewOutput!{% if custom_parameters.type == 'table' -%}
+	var dataSource = {{ module_info.name }}TableDataSource(){% endif -%}    
+    
+    // MARK: - Life cycle
+    func configure() {
+        /* basic view configuration */
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad(){% if custom_parameters.type == 'table' -%}
+		tableView.dataSource = dataSource{% endif -%}
+        output.moduleDidLoad()
+    }
 }
 
 
 // MARK: - View Input 
 extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewInput {
-	{% if custom_parameters.type == 'table' %}
-		func update(withData data: [<#DataDomainModel#>])
-	{% else %}
-		func update(withData data: <#DataDomainModel#>)
-	{% endif %} {
-	
-	}
-	
-   func update(withError error: <#ErrorModel#> ) {
-   
-   }
+    
+    func update(withData data: {% if custom_parameters.type == 'table' -%}[{{ DomainModel -}}]{% else -%}{{ DomainModel -}}{% endif -%}) { {% if custom_parameters.type == 'table' -%}
+		dataSource.update(data: data)
+		tableView.reloadData(){% endif -%}
+		
+    }
+    
+    func update(withError error: {{ ErrorModel }}) {
+        
+    }
 }

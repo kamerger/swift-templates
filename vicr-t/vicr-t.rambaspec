@@ -17,11 +17,13 @@ code_files:
 - {name: Module/Router.swift, path: Code/router.swift.liquid}
 
 # Module/View
-- {name: Module/View/View.swift, path: Code/view.swift.liquid}
+- {name: View/View.swift, path: Code/view.swift.liquid}
 
 # Data source if it needed 
 {% if custom_parameters.type == 'table' %}
-- {name: Module/View/DataSource.swift, path: Code/datasource.swift.liquid}
+- {name: View/DataSource.swift, path: Code/datasource.swift.liquid}
+- {name: View/TableViewCell.swift, path: Code/cell.swift.liquid}
+- {name: View/TableViewCell.xib, path: Code/cell.xib.liquid}
 {% endif %}
 
 # The declarations for test files

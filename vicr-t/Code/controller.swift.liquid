@@ -1,18 +1,9 @@
-//
-//  {{ prefix }}{{ module_info.file_name }}
-//  {{ module_info.project_name }}
-//
-//  Created by {{ developer.name }} on {{ date }}.
-//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
-//
+{% include 'header' -%}{% include 'parameters' -%}
 
-import UIKit
 
 // MARK: - Controller
-final class {{ module_info.name }}Controller: {{ module_info.name }}ModuleInput, 
-	{{ module_info.name }}ViewOutput, 
-	{{ module_info.name }}InteractorOutput
-{
+final class {{ module_info.name }}Controller: {{ module_info.name }}ModuleInput {
+
 	var interactor: {{ module_info.name }}InteractorInput!
 	var router: {{ module_info.name }}RouterInput!
 	weak var view: {{ module_info.name }}ViewInput!
@@ -22,13 +13,16 @@ final class {{ module_info.name }}Controller: {{ module_info.name }}ModuleInput,
 	func setupDelegate(output: {{ module_info.name }}ModuleOutput) {
 		self.output = output
 	}
+}
 
+// MARK: - Interactor Output
+extension {{ module_info.name }}Controller: {{ module_info.name }}InteractorOutput {
+	
+}
 
-	// MARK: - Interactor Output
-
-
-	// MARK: - View Output
-
+// MARK: - View Output
+extension {{ module_info.name }}Controller: {{ module_info.name }}ViewOutput {
+	
 	func moduleDidLoad() {
 		//
 	}

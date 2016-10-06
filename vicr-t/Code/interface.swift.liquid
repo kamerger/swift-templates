@@ -1,26 +1,17 @@
-//
-//  {{ prefix }}{{ module_info.file_name }}
-//  {{ module_info.project_name }}
-//
-//  Created by {{ developer.name }} on {{ date }}.
-//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
-//
-
+{% include 'header' -%}{% include 'parameters' -%}
 
 // MARK: - Module interface
+// MARK: Input
 
-//MARK: Input
-
-protocol {{ module_info.name }}ModuleInput: class
-{
+protocol {{ module_info.name }}ModuleInput: class {
+	
 	func setupDelegate(output: {{ module_info.name }}ModuleOutput)
 }
 
 
-//MARK: Output
+// MARK: Output
 
-protocol {{ module_info.name }}ModuleOutput: class
-{
-  
+protocol {{ module_info.name }}ModuleOutput: class {
+	
 }
 

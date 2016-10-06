@@ -1,18 +1,9 @@
-//
-//  {{ prefix }}{{ module_info.file_name }}
-//  {{ module_info.project_name }}
-//
-//  Created by {{ developer.name }} on {{ date }}.
-//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
-//
-
-import NavigationKit
+{% include 'header' -%}{% include 'parameters' -%}
+{{ ui_imports -}}
 
 final class {{ module_info.name }}Assembly
 {
-
-
-	class func createModule({% if custom_parameters.di > '' %}usingDI diContainer: {{ custom_parameters.di }}, {% endif %}configure: (_ module: {{ module_info.name }}ModuleInput) -> Void) -> NKViewController {
+	class func createModule({% if custom_parameters.di > '' %}usingDI diContainer: {{ custom_parameters.di }}, {% endif %}configure: (_ module: {{ module_info.name }}ModuleInput) -> Void) -> {{ ViewClass -}} {
 	{% if custom_parameters.sb > '' %}
         let storyboard = UIStoryboard(name: "{{ custom_parameters.sb }}", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "{{ module_info.name }}ViewController") as! {{ module_info.name }}ViewController

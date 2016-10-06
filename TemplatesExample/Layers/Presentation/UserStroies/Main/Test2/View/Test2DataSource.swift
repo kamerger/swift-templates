@@ -1,22 +1,28 @@
-{% include 'header' -%}{% include 'parameters' -%}
+//
+//  Test2DataSource.swift
+//  Templates Example
+//
+//  Created by Maksim Bazarov on 06/10/2016.
+//  Copyright © 2016 Maxim Bazarov. All rights reserved.
+//
 
-{{ ui_imports -}}
+import NavigationKit
 
-final class {{ module_info.name }}TableDataSource: NSObject {
-    var data: [{{ DomainModel }}]?
+final class Test2TableDataSource: NSObject {
+    var data: [TestDomainModel]?
     
-	func update(data: [{{ DomainModel }}]?) {
+	func update(data: [TestDomainModel]?) {
 		self.data = data
     }
     
-    func item(forIndexPath indexPath: IndexPath) -> {{ DomainModel }}? {
+    func item(forIndexPath indexPath: IndexPath) -> TestDomainModel? {
         let row = indexPath.row
         guard let data = data, data.indices.contains(row) else { return nil }
         return data[row]
     }
 }
 
-extension {{ module_info.name }}TableDataSource: UITableViewDataSource {
+extension Test2TableDataSource: UITableViewDataSource {
     
     
     // MARK: Sections
@@ -31,7 +37,7 @@ extension {{ module_info.name }}TableDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let item = item(forIndexPath: indexPath),
-            let cell = tableView.dequeueReusableCell(withIdentifier: {{ module_info.name }}TableViewCell.reuseIdentifier) as? {{ module_info.name }}TableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Test2TableViewCell.reuseIdentifier) as? Test2TableViewCell
         else { return UITableViewCell() }
         
         cell.fill(withData: item)

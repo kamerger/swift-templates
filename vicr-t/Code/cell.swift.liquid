@@ -1,0 +1,14 @@
+{% include 'header' -%}{% include 'parameters' -%}
+
+{{ ui_imports -}}
+
+
+class {{ module_info.name }}TableViewCell: UITableViewCell {
+    
+    static let reuseIdentifier = "{{ module_info.name }}TableViewCell"
+    
+    func fill(withData data: {{ DomainModel -}}) {
+        /*Fill data with model*/
+    }
+    
+}

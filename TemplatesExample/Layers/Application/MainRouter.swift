@@ -22,8 +22,8 @@ final class MainRouter: NSObject {
 //        tabBarController.presentAsRootViewController {}
 //       let main = MainScreenAssembly.createModule(usingContainer: diContainer) { (_) in }
 //        tabBarController.viewControllers = [main]
-        let test = TestAssembly.createModule { (TestModuleInput) in
-            <#code#>
-        }
+//        let test = TestAssembly.createModule { (TestModuleInput) in
+//            <#code#>
+//        }
     }
 }
