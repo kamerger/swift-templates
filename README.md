@@ -1,5 +1,5 @@
 # Swift templates
-This is the collection of templates for [`Generamba`](https://github.com/rambler-ios/Generamba) 
+This is the collection of templates for [`Generamba`](https://github.com/rambler-digital-solutions/Generamba) 
 
 - [Installation](#installation)
 - [How to use](#how-to-use)
@@ -13,7 +13,7 @@ This is the collection of templates for [`Generamba`](https://github.com/rambler
 catalogs:
 - 'https://github.com/VIPER/swift-templates'
 templates:
-- {name: vicr}
+- {name: vicr-t}
 ```
 
 3) Run `generamba template install`
@@ -22,5 +22,5 @@ templates:
 
 ## How to use
 
-- [module-vc] (https://github.com/MaksimBazarov/swift-templates/blob/master/module-vc/README.md)
+- [vicr-t] (https://github.com/MaksimBazarov/swift-templates/blob/master/vicr-t/README.md)
 
