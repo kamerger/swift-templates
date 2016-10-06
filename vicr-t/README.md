@@ -6,7 +6,7 @@ VICR template
 
 Use  
 ```sh
-generamba gen Test2 vicr-t --module_path Layers/Presentation/UserStroies/Main/ --custom_parameters \
+generamba gen SampleScreen vicr-t --module_path Layers/Presentation/UserStroies/Main/ --custom_parameters \
 type:table \
 model:TestDomainModel \
 di:DIContainer \
