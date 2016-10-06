@@ -1,3 +1,4 @@
+[![Language Swift 3](https://img.shields.io/badge/Language-Swift3-orange.svg)](https://swift.org)
 # Swift templates
 This is the collection of templates for [`Generamba`](https://github.com/rambler-digital-solutions/Generamba) 
 
