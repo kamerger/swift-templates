@@ -6,13 +6,11 @@ VICR template
 
 Use  
 ```sh
-generamba gen SampleScreen vicr-t --module_path Layers/Presentation/UserStories/Main --custom_parameters \
-type: table \
-model: DomainModelClass \
-error: ErrorClass \
-di: DIContainerClass \
-base: BaseControllerprefix
-
+generamba gen SampleScreen vicr-t --module_path Layers/Presentation/UserStroies/Main/ --custom_parameters \
+type:table \
+model:TestDomainModel \
+di:DIContainer \
+sb:Main \
 ``` 
 for generate module, where `SampleScreen` is module name
 
@@ -20,13 +18,17 @@ for generate module, where `SampleScreen` is module name
 ###Options
 
 ####type: 
+`table` for generating table view module with cell and datasource, skip if need ViewController
 
 ####model:
+Domain model class name Xcode template by default
  
 ####error: 
+Error class name `String` by default
 
 ####di: 
+DI Container class name using in assembly
 
 ####base: 
-
+ViewControllers base prefix `Base` by default
 
