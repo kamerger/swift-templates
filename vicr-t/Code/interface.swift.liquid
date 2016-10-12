@@ -3,15 +3,14 @@
 // MARK: - Module interface
 // MARK: Input
 
-protocol {{ module_info.name }}ModuleInput: class {
-	
-	func setupDelegate(output: {{ module_info.name }}ModuleOutput)
+protocol {{ module_info.name }}ModuleInput: class { 
+    func setupDelegate(output: {{ module_info.name }}ModuleOutput)
 }
 
 
 // MARK: Output
 
 protocol {{ module_info.name }}ModuleOutput: class {
-	
+    
 }
 

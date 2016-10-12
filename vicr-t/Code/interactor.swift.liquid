@@ -3,17 +3,17 @@
 
 // MARK: - Interface
 protocol {{ module_info.name }}InteractorInput: class {
-	
+    
 }
 
 //MARK: Output
 protocol {{ module_info.name }}InteractorOutput: class {
-	
+    
 }
 
 // MARK: - Interactor
 final class {{ module_info.name }}Interactor: {{ module_info.name }}InteractorInput {
-	
-	weak var output: {{ module_info.name }}InteractorOutput!
+    weak var output: {{ module_info.name }}InteractorOutput!
+
 }
 

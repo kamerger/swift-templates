@@ -4,26 +4,26 @@
 // MARK: - Controller
 final class {{ module_info.name }}Controller: {{ module_info.name }}ModuleInput {
 
-	var interactor: {{ module_info.name }}InteractorInput!
-	var router: {{ module_info.name }}RouterInput!
-	weak var view: {{ module_info.name }}ViewInput!
-	weak var output: {{ module_info.name }}ModuleOutput?
+    var interactor: {{ module_info.name }}InteractorInput!
+    var router: {{ module_info.name }}RouterInput!
+    weak var view: {{ module_info.name }}ViewInput!
+    weak var output: {{ module_info.name }}ModuleOutput?
 
-	// MARK: - Module Input
-	func setupDelegate(output: {{ module_info.name }}ModuleOutput) {
-		self.output = output
-	}
+    // MARK: - Module Input
+    func setupDelegate(output: {{ module_info.name }}ModuleOutput) {
+        self.output = output
+    }
 }
 
 // MARK: - Interactor Output
 extension {{ module_info.name }}Controller: {{ module_info.name }}InteractorOutput {
-	
+    
 }
 
 // MARK: - View Output
 extension {{ module_info.name }}Controller: {{ module_info.name }}ViewOutput {
-	
-	func moduleDidLoad() {
-		//
-	}
+    
+    func moduleDidLoad() {
+        //
+    }
 }

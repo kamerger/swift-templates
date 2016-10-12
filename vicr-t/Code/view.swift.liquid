@@ -18,7 +18,7 @@ protocol {{ module_info.name }}ViewOutput: class {
 final class {{ module_info.name }}ViewController: {{ ViewClass -}} {
     
     var output: {{ module_info.name }}ViewOutput!{% if custom_parameters.type == 'table' -%}
-	var dataSource = {{ module_info.name }}TableDataSource(){% endif -%}    
+    var dataSource = {{ module_info.name }}TableDataSource(){% endif -%}    
     
     // MARK: - Life cycle
     func configure() {
@@ -27,7 +27,7 @@ final class {{ module_info.name }}ViewController: {{ ViewClass -}} {
     
     override func viewDidLoad() {
         super.viewDidLoad(){% if custom_parameters.type == 'table' -%}
-		tableView.dataSource = dataSource{% endif -%}
+        tableView.dataSource = dataSource{% endif -%}
         output.moduleDidLoad()
     }
 }
@@ -37,9 +37,9 @@ final class {{ module_info.name }}ViewController: {{ ViewClass -}} {
 extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewInput {
     
     func update(withData data: {% if custom_parameters.type == 'table' -%}[{{ DomainModel -}}]{% else -%}{{ DomainModel -}}{% endif -%}) { {% if custom_parameters.type == 'table' -%}
-		dataSource.update(data: data)
-		tableView.reloadData(){% endif -%}
-		
+        dataSource.update(data: data)
+        tableView.reloadData(){% endif -%}
+        
     }
     
     func update(withError error: {{ ErrorModel }}) {
