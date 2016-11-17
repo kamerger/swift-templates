@@ -14,6 +14,14 @@ sb:Main \
 ``` 
 for generate module, where `SampleScreen` is module name
 
+###or
+
+Use  
+```sh
+generamba gen SampleScreen vicr-t --module_path Layers/Presentation/UserStroies/Main/ --custom_parameters \
+usexib:1 \
+``` 
+for creating ViewController xib
 
 ###Options
 

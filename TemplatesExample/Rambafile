@@ -11,6 +11,9 @@ project_target: TemplatesExample
 
 ### Templates
 catalogs:
-# - 'https://github.com/VIPER/swift-templates'
+- 'https://github.com/VIPER/swift-templates'
 templates:
 - {name: vicr-t, local: '/Users/maksim.bazarov/own/swift-templates/vicr-t'}
+#- {name: vicr-tb, local: '/Users/maksim.bazarov/own/swift-templates/vicr-t'}
+#- {name: vicr-tb}
+#- {name: vicr-t}

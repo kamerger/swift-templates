@@ -18,6 +18,9 @@ code_files:
 
 # Module/View
 - {name: View/View.swift, path: Code/view.swift.liquid}
+{% if custom_parameters.usexib > '' %}
+- {name: View/ViewController.xib, path: Code/view.xib.liquid}
+{% endif %}
 
 # Data source if it needed 
 {% if custom_parameters.type == 'table' %}

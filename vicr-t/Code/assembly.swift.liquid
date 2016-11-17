@@ -7,7 +7,9 @@ final class {{ module_info.name }}Assembly
 	{% if custom_parameters.sb > '' %}
         let storyboard = UIStoryboard(name: "{{ custom_parameters.sb }}", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "{{ module_info.name }}ViewController") as! {{ module_info.name }}ViewController
-	{% else %}
+	{% elsif custom_parameters.usexib > '' %}
+		let view = {{ module_info.name }}ViewController(nibName: "{{ module_info.name }}ViewController", bundle: nil)
+	{% else %}		
 		let view = {{ module_info.name }}ViewController()
 	{% endif %}
         view.configure()
