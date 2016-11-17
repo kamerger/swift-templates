@@ -5,8 +5,8 @@
 final class {{ module_info.name }}TableDataSource: NSObject {
     var data: [{{ DomainModel }}]?
     
-	func update(data: [{{ DomainModel }}]?) {
-		self.data = data
+    func update(data: [{{ DomainModel }}]?) {
+        self.data = data
     }
     
     func item(forIndexPath indexPath: IndexPath) -> {{ DomainModel }}? {
@@ -17,7 +17,6 @@ final class {{ module_info.name }}TableDataSource: NSObject {
 }
 
 extension {{ module_info.name }}TableDataSource: UITableViewDataSource {
-    
     
     // MARK: Sections
     func numberOfSections(in tableView: UITableView) -> Int {
