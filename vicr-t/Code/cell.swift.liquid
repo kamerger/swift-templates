@@ -3,11 +3,12 @@
 {{ ui_imports -}}
 
 
-class {{ module_info.name }}TableViewCell: UITableViewCell {
-    
+class {{ module_info.name }}TableViewCell: UITableViewCell
+{
     static let reuseIdentifier = "{{ module_info.name }}TableViewCell"
     
-    func fill(withData data: {{ DomainModel -}}) {
+    func fill(withData data: {{ DomainModel -}})
+    {
         /*Fill data with model*/
     }
     

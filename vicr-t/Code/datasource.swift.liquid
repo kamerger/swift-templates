@@ -2,33 +2,39 @@
 
 {{ ui_imports -}}
 
-final class {{ module_info.name }}TableDataSource: NSObject {
+final class {{ module_info.name }}TableDataSource: NSObject
+{
     var data: [{{ DomainModel }}]?
     
-    func update(data: [{{ DomainModel }}]?) {
+    func update(data: [{{ DomainModel }}]?)
+    {
         self.data = data
     }
     
-    func item(forIndexPath indexPath: IndexPath) -> {{ DomainModel }}? {
+    func item(forIndexPath indexPath: IndexPath) -> {{ DomainModel }}?
+    {
         let row = indexPath.row
         guard let data = data, data.indices.contains(row) else { return nil }
         return data[row]
     }
 }
 
-extension {{ module_info.name }}TableDataSource: UITableViewDataSource {
-    
+extension {{ module_info.name }}TableDataSource: UITableViewDataSource
+{
     // MARK: Sections
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
         return 1
     }
     
     // MARK: Rows
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return data?.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         guard let item = item(forIndexPath: indexPath),
             let cell = tableView.dequeueReusableCell(withIdentifier: {{ module_info.name }}TableViewCell.reuseIdentifier) as? {{ module_info.name }}TableViewCell
         else { return UITableViewCell() }
